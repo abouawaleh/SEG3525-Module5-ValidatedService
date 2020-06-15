@@ -10,6 +10,18 @@
 <!-- john-doe.jpg taken from https://www.pinterest.ca/pin/346777240058194395/ -->
 <!-- jane-doe.jpg taken from http://clipart-library.com/cartoon-images-of-women.html/ -->
 
+<!-- Icons sources -->
+<!-- big barber - https://img.icons8.com/cute-clipart/64/000000/barber-pole.png -->
+<!-- man - https://img.icons8.com/cotton/64/000000/men-age-group-4.png -->
+<!-- woman - https://img.icons8.com/cotton/64/000000/women-age-group-5.png -->
+<!-- barber - https://img.icons8.com/ios/50/000000/barber-pole.png -->
+<!-- alert - https://img.icons8.com/ios/32/000000/break--v1.png -->
+<!-- chair - https://img.icons8.com/ios/50/000000/barber-chair.png -->
+<!-- scissors - https://img.icons8.com/ios/50/000000/barber-scissors.png -->
+<!-- profile - https://img.icons8.com/ios/50/000000/test-account.png -->
+<!-- calendar - https://img.icons8.com/ios/50/000000/calendar.png -->
+<!-- card - https://img.icons8.com/ios/50/000000/bank-card-back-side.png -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +47,7 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>XCuts Haircuts</h1>
+        <h1><img src="https://img.icons8.com/cute-clipart/64/000000/barber-pole.png"/>XCuts Haircuts</h1>
     </div>
 
     <!-- Bootstrap Navbar from https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp# -->
@@ -48,7 +60,7 @@
                 <a class="nav-link" href="#second">MEN'S</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link href="#third">WOMEN'S</a>
+                <a class="nav-link" href="#third">WOMEN'S</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#fourth">HAIRDRESSERS</a>
@@ -94,7 +106,7 @@
                 <img src="images/men-cut.jpg" width="600" height="500">
             </div>
             <div class="col-sm-5 p-3 my-3">
-                <h2>MEN'S HAIRCUTS</h2>
+                <h2><img src="https://img.icons8.com/cotton/64/000000/men-age-group-4.png"/>MEN'S HAIRCUTS</h2>
                 <p>Select to preview various haircuts specific to men</p>
                 <br>               
                 <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#menprice">Learn more</button>
@@ -105,7 +117,7 @@
         </div>
         <div class="row" id="third">
             <div class="col-sm-5 p-3 my-3">
-                <h2>WOMEN'S HAIRCUTS</h2>
+                <h2><img src="https://img.icons8.com/cotton/64/000000/women-age-group-5.png"/>WOMEN'S HAIRCUTS</h2>
                 <p>Select to preview various haircuts specific to women</p>                
                 <br>
                 <button type="button" class="btn btn-primary"  data-toggle="collapse" data-target="#womenprice">Learn more</button>
@@ -124,7 +136,7 @@
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
     <div class="container p-3" id="fourth">
-        <h2>CHOOSE OUR HAIRDRESSERS</h2>
+        <h2><img src="https://img.icons8.com/ios/50/000000/barber-pole.png"/>CHOOSE OUR HAIRDRESSERS</h2>
         <form action="/action_page.php">
             <div class="form-check">
                 <div class="card bg-primary" style="width:200px">
@@ -162,7 +174,7 @@
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
     <div class="container">
-        <h2>ALERT</h2>
+        <h2><img src="https://img.icons8.com/ios/32/000000/break--v1.png"/>ALERT</h2>
         <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Important update! (March 17) </strong> Due to COVID-19, our services are closed until further notice.
@@ -170,9 +182,9 @@
     </div>
     
     <div class="container-md p-3 my-3" id="fifth">
-        <h2>CHOOSE OUR SERVICES</h2>
+        <h2><img src="https://img.icons8.com/ios/50/000000/barber-chair.png"/>CHOOSE OUR SERVICES</h2>
         <br>               
-        <h4>SERVICES (Men/Women)</h4>
+        <h4><img src="https://img.icons8.com/ios/50/000000/barber-scissors.png"/>SERVICES (Men/Women)</h4>
         <br>
         <form action="/action_page.php">
             <div class="form-check">
@@ -212,7 +224,7 @@
             </div>
         </form>                                                                                                             
         <br>
-        <h4>INFORMATION</h4>
+        <h4><img src="https://img.icons8.com/ios/50/000000/test-account.png"/>INFORMATION</h4>
         <br>
         <form action="/action_page.php">
             <div class="form-group">
@@ -229,7 +241,7 @@
             </div>
         </form> 
         <br>
-        <h4>SET THE DATE</h4>
+        <h4><img src="https://img.icons8.com/ios/50/000000/calendar.png"/>SET THE DATE</h4>
         <br>
         <p>What date?</p>
         <form action="/action_page.php">
@@ -242,7 +254,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <br>
-        <h4>PAYMENT DETAILS</h4>
+        <h4><img src="https://img.icons8.com/ios/50/000000/bank-card-back-side.png"/>PAYMENT DETAILS</h4>
         <br>
         <form action="/action_page.php">
             <div class="form-group">
