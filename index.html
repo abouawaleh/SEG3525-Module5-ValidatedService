@@ -236,6 +236,10 @@
                 <input type="lastname" class="form-control" id="lastname" placeholder="Enter last name" name="lastname">
             </div>
             <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="phone" class="form-control" id="phone" placeholder="Enter phone number" name="phone">
+            </div>
+            <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
@@ -248,10 +252,9 @@
             <div class="form-group row">
                 <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                 <div class="col-10">
-                    <input class="form-control" type="datetime-local" value="2020-06-15T12:00:00" id="dateTimeInput">
+                    <input class="form-control" type="datetime-local" value="2020-06-15T12:00:00" id="dateInput">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <br>
         <h4><img src="https://img.icons8.com/ios/50/000000/bank-card-back-side.png"/>PAYMENT DETAILS</h4>
@@ -259,16 +262,19 @@
         <form action="/action_page.php">
             <div class="form-group">
                 <label for="cardnumber">Card Number:</label>
-                <input type="cardnumber" class="form-control" id="cardnumber" placeholder="1234-XXXX-XXXX-XXXX" name="cardnumber">
+                <input type="cardnumber" class="form-control" id="debit" placeholder="1234-XXXX-XXXX-XXXX" name="cardnumber">
             </div>
-            <div class="form-group">
-                <label for="expirydate">Expiry Date:</label>
-                <input type="expirydate" class="form-control" id="expirydate" placeholder="XX-XX" name="expirydate">
+            <div class="row">
+                <div class="col-8 form-group">
+                    <label for="expirydate">Expiry Date:</label>
+                    <input type="expirydate" class="form-control" id="expirydate" placeholder="XX-XX" name="expirydate">
+                </div>
+                <div class="col-4 form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="cvv" class="form-control" id="cvv" name="cvv">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="cvv">CVV:</label>
-                <input type="cvv" class="form-control" id="cvv" placeholder="" name="cvv">
-            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form> 
     </div>
     <br>
