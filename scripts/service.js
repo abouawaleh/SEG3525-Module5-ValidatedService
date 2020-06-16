@@ -25,18 +25,17 @@ function validatePhone(txtPhone) {
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
 const setDateFormat = "yyyy-MM-ddThh:mm";
 
-function disableDates(date) {
-    if (date.getDay() == 0)
-            return [false];
+function disableDates(date) {         
+    var day = date.getDay();
+    
     // code to check if radio button is checked from https://stackoverflow.com/questions/2272507/find-out-whether-radio-button-is-checked-with-jquery
-    if($('#radioJohn').is(':checked')) {          
-        if (date.getDay() == 4 || date.getDay() == 5 || date.getDay() == 6)
-            return [false];
+    if($('#radioJohn').is(':checked')) { 
+        return [(day != 0 && day != 4 && day != 5 && day != 6)];
     }
     
     if($('#radioJane').is(':checked')) {         
-        if (date.getDay() == 1 || date.getDay() == 2 || date.getDay() == 3)
-            return [false];
+       var day = date.getDay();
+        return [(day != 0 && day != 1 && day != 2 && day != 3)];
     }
 }
 
