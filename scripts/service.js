@@ -10,7 +10,7 @@ function validatePhone(txtPhone) {
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
     // Regex taken from https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
-    var filter = ^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+    var filter = /^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
     if (filter.test(a)) {
         return true;
     }
