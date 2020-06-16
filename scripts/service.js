@@ -10,7 +10,7 @@ function validatePhone(txtPhone) {
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
     // Regex taken from https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
-    var filter = /^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+    var filter = /^1?(\d{3})([ -]?)(\d{3})([ -]?)(\d{4})$/;
     if (filter.test(a)) {
         return true;
     }
@@ -19,12 +19,40 @@ function validatePhone(txtPhone) {
     }
 }
 
-function validateCard(txtDebit) {
+function validateCardNumbwe(txtDebit) {
     var a = document.getElementById(txtDebit).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
     // Regex taken from https://ihateregex.io/expr/credit-card
-    var filter = (^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$);
+    var filter = /^(\d{4})([ -]?)(\d{4})([ -]?)(\d{4})([ -]?)(\d{4})$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validateCardExpiry(txtDebit) {
+    var a = document.getElementById(txtDebit).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    // Regex taken from https://ihateregex.io/expr/credit-card
+    var filter = /^(01|02|03|04|05|06|07|08|09|10|11|12)([-])(20|21|22|23|24|25|26|27|28|29|30)$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validateCardCVV(txtDebit) {
+    var a = document.getElementById(txtDebit).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    // Regex taken from https://ihateregex.io/expr/credit-card
+    var filter = /^[0-9]{3,3}$/;
     if (filter.test(a)) {
         return true;
     }
@@ -119,6 +147,28 @@ $(document).ready(function(){
         }
         else {
             $("#debit").removeClass("error");
+        }
+    });
+    
+      //Card number validation
+    $("#expiry").on("change", function(){
+        if (!validateCardExpiry("expiry")){
+            alert("Wrong format for card expiry");
+            $("#expiry").addClass("error");
+        }
+        else {
+            $("#expiry").removeClass("error");
+        }
+    });
+    
+      //Card number validation
+    $("#cvv").on("change", function(){
+        if (!validateCardCVV("cvv")){
+            alert("Wrong format for card cvv");
+            $("#cvv").addClass("error");
+        }
+        else {
+            $("#cvv").removeClass("error");
         }
     });
     
