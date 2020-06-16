@@ -151,13 +151,13 @@ $(document).ready(function(){
     });
     
       //Card number validation
-    $("#expiry").on("change", function(){
-        if (!validateCardExpiry("expiry")){
+    $("#expirydate").on("change", function(){
+        if (!validateCardExpiry("expirydate")){
             alert("Wrong format for card expiry");
-            $("#expiry").addClass("error");
+            $("#expirydate").addClass("error");
         }
         else {
-            $("#expiry").removeClass("error");
+            $("#expirydate").removeClass("error");
         }
     });
     
