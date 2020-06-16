@@ -9,7 +9,8 @@ function validatePhone(txtPhone) {
     var a = document.getElementById(txtPhone).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^(\([-+]?[0-9]+)\)$/;
+    // Regex taken from https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
+    var filter = ^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
     if (filter.test(a)) {
         return true;
     }
@@ -43,6 +44,26 @@ function disableDates(date) {
 // HERE, JQuery "LISTENING" starts
 $(document).ready(function(){
 
+    //If text empty, when focus out it becomes red
+    //If empty and red, when writing text, it goes back to original color
+    //Code taken from https://stackoverflow.com/questions/24079277/how-change-border-color-of-text-box-when-text-box-empty-lost-focus-event-and-onf
+    $("input[type='text']").keyup(function () {
+        var text = $(this).val();
+        if(text != "")
+        {
+            $(this).css('border','solid 1px #ced4da');
+        }
+        });
+    $("input[type='text']").blur(function () {
+        var text = $(this).val();
+        if(text == "")
+        {
+            $(this).css('border','solid 1px red');
+        }
+        });                
+                    
+               
+                    
     // phone validation, it calls validatePhone
     // and also some feedback as an Alert + putting a value in the input that shows the format required
     // the "addClass" will use the class "error" defined in style.css and add it to the phone input
