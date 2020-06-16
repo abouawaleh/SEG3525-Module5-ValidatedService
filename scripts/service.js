@@ -19,6 +19,20 @@ function validatePhone(txtPhone) {
     }
 }
 
+function validateEmail(txtEmail) {
+    var a = document.getElementById(txtEmail).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    // Regex taken from https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
+    var filter = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 function validateCard(txtDebit) {
     var a = document.getElementById(txtDebit).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
@@ -139,6 +153,17 @@ $(document).ready(function(){
         }   
     );
     
+    //Email validation
+    $("#email").on("change", function(){
+        if (!validateEmail("email")){
+            alert("Wrong format for email");
+            $("#email").addClass("error");
+        }
+        else {
+            $("#email").removeClass("error");
+        }
+    })
+    
     //Card number validation
     $("#debit").on("change", function(){
         if (!validateCard("debit")){
@@ -150,10 +175,10 @@ $(document).ready(function(){
         }
     });
     
-      //Card number validation
+      //Card expiry date validation
     $("#expirydate").on("change", function(){
         if (!validateCardExpiry("expirydate")){
-            alert("Wrong format for card expiry");
+            alert("Wrong format for card expiry date");
             $("#expirydate").addClass("error");
         }
         else {
@@ -161,7 +186,7 @@ $(document).ready(function(){
         }
     });
     
-      //Card number validation
+      //Card cvv validation
     $("#cvv").on("change", function(){
         if (!validateCardCVV("cvv")){
             alert("Wrong format for card cvv");
