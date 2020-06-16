@@ -19,6 +19,19 @@ function validatePhone(txtPhone) {
     }
 }
 
+function validateCard(txtDebit) {
+    var a = document.getElementById(txtDebit).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    // Regex taken from https://ihateregex.io/expr/credit-card
+    var filter = (^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$);
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 // Using date restrictions on datepicker
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/ 
@@ -71,7 +84,7 @@ $(document).ready(function(){
     $("#phone").on("change", function(){
         if (!validatePhone("phone")){
             alert("Wrong format for phone");
-            $("#phone").val("(xxxx)");
+            $("#phone").val("(xxx) xxx-xxxx");
             $("#phone").addClass("error");
         }
         else {
@@ -97,5 +110,16 @@ $(document).ready(function(){
             beforeShowDay: disableDates
         }   
     );
+    
+    //Card number validation
+    $("#debit").on("change", function(){
+        if (!validateCard("debit")){
+            alert("Wrong format for card number");
+            $("#debit").addClass("error");
+        }
+        else {
+            $("#debit").removeClass("error");
+        }
+    });
     
 });
