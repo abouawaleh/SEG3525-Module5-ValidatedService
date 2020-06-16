@@ -19,7 +19,7 @@ function validatePhone(txtPhone) {
     }
 }
 
-function validateCardNumbwe(txtDebit) {
+function validateCard(txtDebit) {
     var a = document.getElementById(txtDebit).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
