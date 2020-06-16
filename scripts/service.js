@@ -28,7 +28,7 @@ const setDateFormat = "yyyy-MM-ddThh:mm";
 function disableDates(date) {
     if (date.getDay() == 0)
             return [false];
-    
+    // code to check if radio button is checked from https://stackoverflow.com/questions/2272507/find-out-whether-radio-button-is-checked-with-jquery
     if($('#radioJohn').is(':checked')) {          
         if (date.getDay() == 4 || date.getDay() == 5 || date.getDay() == 6)
             return [false];
