@@ -23,15 +23,21 @@ function validatePhone(txtPhone) {
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/ 
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"]
-const setDateFormat = "mm/dd/yy";
+const setDateFormat = "yyyy-MM-ddThh:mm";
 
 function disableDates(date) {
-    // Sunday is Day 0, disable all Sundays
     if (date.getDay() == 0)
-        return [false];
-    var string = jQuery.datepicker.formatDate(setDateFormat, date);
-    return [ unavailableDates.indexOf(string) == -1 ]
+            return [false];
+    
+    if($('#radioJohn').is(':checked')) {          
+        if (date.getDay() == 4 || date.getDay() == 5 || date.getDay() == 6)
+            return [false];
+    }
+    
+    if($('#radioJane').is(':checked')) {         
+        if (date.getDay() == 1 || date.getDay() == 2 || date.getDay() == 3)
+            return [false];
+    }
 }
 
 
